@@ -290,9 +290,6 @@ export function getMessageImages(message: RequestMessage): string[] {
 }
 
 export function isVisionModel(model: string) {
-  
-  // Note: This is a better way using the TypeScript feature instead of `&&` or `||` (ts v5.5.0-dev.20240314 I've been using)
-
   const visionKeywords = [
     "vision",
     "claude-3",
@@ -300,6 +297,14 @@ export function isVisionModel(model: string) {
     "gpt-4-turbo",
     "gpt-4o",
   ];
+  const isGpt4TurboPreview = model === "gpt-4-turbo-preview";
 
+<<<<<<< HEAD
   return visionKeywords.some((keyword) => model.includes(keyword));
+=======
+  return (
+    visionKeywords.some((keyword) => model.includes(keyword)) &&
+    !isGpt4TurboPreview
+  );
+>>>>>>> upstream/main
 }
