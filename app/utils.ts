@@ -299,12 +299,8 @@ export function isVisionModel(model: string) {
   ];
   const isGpt4TurboPreview = model === "gpt-4-turbo-preview";
 
-<<<<<<< HEAD
-  return visionKeywords.some((keyword) => model.includes(keyword));
-=======
   return (
     visionKeywords.some((keyword) => model.includes(keyword)) &&
     !isGpt4TurboPreview
   );
->>>>>>> upstream/main
 }
