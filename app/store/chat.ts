@@ -90,12 +90,16 @@ function createEmptySession(): ChatSession {
 }
 
 function getSummarizeModel(currentModel: string) {
+<<<<<<< HEAD
   // 正则表达式检测模型名称是否以数字开头
   const startsWithNumber = /^\d/.test(currentModel);
   if (startsWithNumber) {
     return SUMMARIZE_MODEL;
   }
 
+=======
+  // if it is using gpt-* models, force to use 4o-mini to summarize
+>>>>>>> upstream/main
   if (currentModel.startsWith("gpt")) {
     const configStore = useAppConfig.getState();
     const accessStore = useAccessStore.getState();
