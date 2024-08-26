@@ -1,3 +1,5 @@
+import path from "path";
+
 export const OWNER = "ChatGPTNextWeb";
 export const REPO = "ChatGPT-Next-Web";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
@@ -41,6 +43,7 @@ export enum Path {
   Sd = "/sd",
   SdNew = "/sd-new",
   Artifacts = "/artifacts",
+  SearchChat = "/search-chat",
 }
 
 export enum ApiPath {
@@ -249,6 +252,7 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gpt-4-turbo-preview": "2023-12",
   "gpt-4o": "2023-10",
   "gpt-4o-2024-05-13": "2023-10",
+  "gpt-4o-2024-08-06": "2023-10",
   "gpt-4o-mini": "2023-10",
   "gpt-4o-mini-2024-07-18": "2023-10",
   "gpt-4-vision-preview": "2023-04",
@@ -270,6 +274,7 @@ const openaiModels = [
   "gpt-4-turbo-preview",
   "gpt-4o",
   "gpt-4o-2024-05-13",
+  "gpt-4o-2024-08-06",
   "gpt-4o-mini",
   "gpt-4o-mini-2024-07-18",
   "gpt-4-vision-preview",
@@ -478,4 +483,8 @@ export const internalAllowedWebDavEndpoints = [
   "https://app.koofr.net/dav/Koofr",
 ];
 
-export const PLUGINS = [{ name: "Stable Diffusion", path: Path.Sd }];
+export const DEFAULT_GA_ID = "G-89WN60ZK2E";
+export const PLUGINS = [
+  { name: "Stable Diffusion", path: Path.Sd },
+  { name: "Search Chat", path: Path.SearchChat },
+];
