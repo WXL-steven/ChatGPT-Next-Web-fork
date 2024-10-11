@@ -108,20 +108,10 @@ function createEmptySession(): ChatSession {
   };
 }
 
-<<<<<<< HEAD
-function getSummarizeModel(currentModel: string) {
-  // 正则表达式检测模型名称是否以数字开头
-  const startsWithNumber = /^\d/.test(currentModel);
-  if (startsWithNumber) {
-    return SUMMARIZE_MODEL;
-  }
-
-=======
 function getSummarizeModel(
   currentModel: string,
   providerName: string,
 ): string[] {
->>>>>>> upstream/main
   // if it is using gpt-* models, force to use 4o-mini to summarize
   if (currentModel.startsWith("gpt") || currentModel.startsWith("chatgpt")) {
     const configStore = useAppConfig.getState();
@@ -145,12 +135,7 @@ function getSummarizeModel(
   if (currentModel.startsWith("gemini")) {
     return [GEMINI_SUMMARIZE_MODEL, ServiceProvider.Google];
   }
-<<<<<<< HEAD
-
-  return currentModel;
-=======
   return [currentModel, providerName];
->>>>>>> upstream/main
 }
 
 
